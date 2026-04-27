@@ -1,0 +1,146 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+  
+  /* Body */
+ body {
+    background: #f4f7fb;
+    color: #333;
+    line-height: 1.6;
+}
+  
+  /* Navigation */
+ nav {
+    background: #1E90FF;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+ }
+    nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;}
+ 
+  nav ul li {
+    margin: 0 15px;}
+
+nav ul li a {
+    color: rgb(202, 11, 11);
+    text-decoration: none;
+    font-weight: bold;}
+    
+ nav ul li a:hover {
+    text-decoration: underline;
+ }
+ 
+ /* Sections */
+ section {
+    padding: 40px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1000px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);}
+
+  /* Headings */
+ h1, h2 {
+    margin-bottom: 20px;
+    color: #1E90FF;
+ }
+
+/* Table */
+ table {
+    width: 100%;
+    border-collapse: collapse;
+ }
+
+ table th, table td {
+ padding: 10px;
+ border: 1px solid #ddd;}
+
+ table th {
+    background: #8fddff;}
+
+
+ /* Cards */
+ .card-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; }
+
+ .card {
+    flex: 1 1 250px;
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: 0.3s;
+ }
+ .card:hover {
+     transform: translateY(-5px);
+}
+ .card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+
+* Social links */
+/* Social Cards */
+.social-card {
+    text-align: center;
+    padding: 20px;}
+
+ .social-card img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%; /* makes it look like profile picture */
+    margin-bottom: 10px;}
+
+ .social-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #1E90FF;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+ .social-card a:hover {
+     background: #187bcd;
+ }
+ /* Form */
+ form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+ button {
+    background: #1E90FF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+ }
+ button:hover {
+    background: #187bcd;
+ }
+    /* Footer */
+ footer {
+    text-align: center;
+    padding: 20px;
+    background: #1E90FF;
+    color: white;
+    margin-top: 20px;
+}
