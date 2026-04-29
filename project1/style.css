@@ -38,15 +38,17 @@ nav ul li a {
  } */
  
  .navbar{
+            
             display:flex;
             justify-content:space-between;
             align-items:center;
             padding:1rem 2rem;
-            background:#1e1e1e;
-            color:rgb(238, 239, 247);
+            background:#200fbe;
+            color:rgb(223, 224, 230);
 
         }
         .nav-links{
+             background: #1E90FF;
             display:flex;
             gap:1.5rem;
             list-style:none;
@@ -54,7 +56,8 @@ nav ul li a {
             padding:0;
         }
         .nav-links a{
-            color:rgb(19, 23, 226);
+             background: #1E90FF;
+            color:rgb(238, 239, 247);
             text-decoration:none;
         }
  /* Sections */
