@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/* The universal selector, denoted by an asterisk (*), matches every single element on the page.
+The universal selector may be omitted if other conditions exist on the element. This selector is often used to remove the default margins and paddings from the elements for quick testing purpose.
+ */
+body {
+    background: lightyellow;
+    font: 18px Arial, sans-serif;
+}
+/* h1 {
+    color: blue;
+    text-align: center;
+} 
+    An element type selector matches all instance of the element in the document with the corresponding element type name. */
+
+/* This is a CSS comment */
+h1 {
+    color: blue;
+    text-align: center;
+}
+/* This is a multi-line CSS comment 
+that spans across more than one line */
+p {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+/* The id selector is used to define style rules for a single or unique element.
+The id selector is defined with a hash sign (#) immediately followed by the id value.
+Example
+Try this code » */
+#error {
+    color: red;
+}
+/* 
+The class selectors can be used to select any HTML element that has a class attribute. All the elements having that class will be formatted according to the defined rule.
+The class selector is defined with a period sign (.) immediately followed by the class value.
+Example
+Try this code » */
+.blue {
+    color: blue;}
+/* }
+The above style rules renders the text in blue of every element in the document that has class attribute set to blue. You can make it a bit more particular. For example: */
+
+/* Descendant Selectors
+You can use these selectors when you need to select an element that is the descendant of another element, for example, if you want to target only those anchors that are contained within an unordered list, rather than targeting all anchor elements. Let's see how it works:
+Example
+Try this code » */
+ul.menu li a {
+    text-decoration: none;
+}
+h1 em {
+    color: green;}
+/* }
+The style rules inside the selector ul.menu li a applied to only those <a> elements that contained inside an <ul> element having the class .menu, and has no effect on other links inside the document.
+Similarly, the style rules inside the h1 em selector will be applied to only those <em> elements that contained inside the <h1> element and has not effect on other <em> elements.
+ */
+
