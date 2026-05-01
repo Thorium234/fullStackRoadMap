@@ -6,8 +6,11 @@
 The universal selector may be omitted if other conditions exist on the element. This selector is often used to remove the default margins and paddings from the elements for quick testing purpose.
  */
 body {
-    background: lightyellow;
+    /* background: lightyellow; */
+     background-color: lightblue;
     font: 18px Arial, sans-serif;
+    color:#000;
+    font: 16px Times,serif;
 }
 /* h1 {
     color: blue;
@@ -16,16 +19,20 @@ body {
     An element type selector matches all instance of the element in the document with the corresponding element type name. */
 
 /* This is a CSS comment */
-h1 {
+/* h1 {
     color: blue;
     text-align: center;
-}
+} */
+ /* h1 {
+  color: white;
+  text-align: center;
+} */
 /* This is a multi-line CSS comment 
 that spans across more than one line */
-p {
+/* p {
     font-size: 18px;
     text-transform: uppercase;
-}
+} */
 
 /* The id selector is used to define style rules for a single or unique element.
 The id selector is defined with a hash sign (#) immediately followed by the id value.
@@ -57,4 +64,17 @@ h1 em {
 The style rules inside the selector ul.menu li a applied to only those <a> elements that contained inside an <ul> element having the class .menu, and has no effect on other links inside the document.
 Similarly, the style rules inside the h1 em selector will be applied to only those <em> elements that contained inside the <h1> element and has not effect on other <em> elements.
  */
+
+ h1 {
+  background-color: green;
+}
+
+div {
+  background-color: green;
+   background: rgba(0, 128, 0, 0.3) /* Green background with 30% opacity */
+}
+
+p {
+  background-color: yellow;
+}
 
