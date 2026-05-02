@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <title>Example of CSS Embedded Style Sheet</title>
+    <style>
+        /*body {
+    color: #ff5722;
+}
+        p { color: #fff; }
+      h1 {
+    color: blue;
+    text-align: center;
+}*/
+      h1 {
+    color: rgb(255, 165, 0);
+}
+p {
+    color: rgb(127, 127, 127);
+}
+      .brain{
+         color: #0000ff;
+       background-color: rgb(255, 105, 123);
+        border: 2px solid;
+        font-family:"New Times Romans";
+      text-align: center; 
+        text-transform: lowercase;
+        font-size: 32px;
+        font-style: normal;
+      }
+      .youtuber{
+      	font-style: oblique;
+         font-size: smaller;
+         font-weight: bold;
+        font-variant: small-caps;
+         color: #434343;
+         text-align: justify;
+        text-indent: 100px;
+         letter-spacing: 10px;
+      }/*
+      .youtuber ul li{
+      font-weight: bold;
+        font-variant: small-caps;
+      }*/
+/*ol > li  {
+    list-style: none;
+   text-decoration: underline;
+}*/
+      ul {
+    padding: 0;
+    list-style: none;
+    background: #f2f2f2;
+}
+ul li {
+    display: inline-block;
+}
+ul li a {
+    display: block;
+    padding: 10px 25px;
+    color: #333;
+    text-decoration: none;
+}
+ul li a:hover {
+    color: #fff;
+    background: #939393;
+}
+      ul {
+    list-style-type: square;
+}
+ol {
+    list-style-type: lower-roman;
+}
+      ol.in li {
+    list-style-position: inside;
+}
+ol.out li {
+    list-style-position: outside;
+}
+   h2 {
+    text-align: center;
+}
+      a {
+    text-decoration: none;
+    border-bottom: 1px dotted;
+        font-size: 18px;
+    line-height: 20px;
+    background-color: #f0e68c;
+         text-transform: uppercase;
+}
+      a:link, a:visited {
+    color: white;    
+    background-color: #1ebba3;    
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #099983;
+    text-decoration: none;
+    text-align: center;
+    font: 14px Arial, sans-serif;  
+}
+a:hover, a:active {
+    background-color: #9c6ae1;
+    border-color: #7443b6;
+}
+    
+    /* a:link {    /* unvisited link */
+    color: #ff0000;
+    text-decoration: none;
+    border-bottom: 1px solid;
+}
+a:visited {    /* visited link */
+    color: #ff00ff;
+}
+a:hover {    /* mouse over link */
+    color: #00ff00;
+    border-bottom: none;
+}
+a:active {    /* active link */
+    color: #00ffff;
+}*/
+      a:link {
+    color: #1ebba3;
+}
+a:visited {
+    color: #ff00f4;
+}
+a:hover {
+    color: #a766ff;
+}
+a:active {
+    color: #ff9800;
+}
+      /*TAble decorstion*/
+/*table {
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+}
+      th, td {
+    padding: 15px;
+}
+      table {
+    border-spacing: 10px;
+}
+      table {
+    width: 100%;
+}
+th {
+    height: 40px;
+}
+      table {
+    width: 300px;
+    table-layout: fixed;
+}
+      th {
+    text-align: left;
+}
+      th {
+    height: 40px;
+    vertical-align: bottom;
+}
+      caption {
+    caption-side: bottom;
+}
+      table {
+    border-collapse: separate;
+    empty-cells: hide;
+}
+      tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}*/
+      table {
+  border-collapse: collapse;
+  border: 2px solid rgb(130 130 130);
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+      caption {
+  caption-side: bottom;
+  padding: 10px;
+  font-weight: bold;
+}
+      thead,
+tfoot {
+  background-color: rgb(228 240 245);
+}
+      th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 10px;
+}
+      td:last-of-type {
+  text-align: center;
+}
+      tbody > tr:nth-of-type(even) {
+  background-color: rgb(237 238 242);
+}
+      tfoot th {
+  text-align: right;
+}
+
+tfoot td {
+  font-weight: bold;
+}
+      
+form {
+  position: relative;
+  width: 740px;
+  height: 498px;
+  margin: 0 auto;
+  padding: 1em;
+  box-sizing: border-box;
+  background: white url("background.jpg");
+
+  /* we create our grid */
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 10em 1em 1em 1em;
+  
+  font-family: "handwriting";
+  src:
+    url("fonts/journal-webfont.woff2") format("woff2"),
+    url("fonts/journal-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+   font-family: "typewriter";
+
+    url("fonts/momot___-webfont.woff2") format("woff2"),
+    url("fonts/momot___-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+      input,
+textarea {
+  font:
+    1.4em/1.5em "handwriting",
+    cursive,
+    sans-serif;
+  border: none;
+  padding: 0 10px;
+  margin: 0;
+  width: 80%;
+  background: none;
+}
+      input:focus,
+textarea:focus {
+  background: rgb(0 0 0 / 10%);
+  border-radius: 5px;
+    border-radius: 5px;
+}
+      button {
+  padding: 5px;
+  font: bold 0.6em sans-serif;
+  border: 2px solid #333333;
+  border-radius: 5px;
+  background: none;
+  cursor: pointer;
+  transform: rotate(-1.5deg);
+}
+
+button::after {
+  content: " >>>";
+}
+
+button:hover,
+button:focus {
+  background: black;
+  color: white;
+}
+      
+    </style>
+</head>
+<body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph of text.</p>
+  <p class="brain">
+  	WPS Copilot
+Redefine Your WorkflowWPS Copilot
+Redefine Your Workflow
+
+Experience the shift from manual labor to intelligent creation within the WPS Office App. WPS AI acts as your powerful co-pilot for every task.
+Document FormattingDocument Formatting
+Content WritingContent Writing
+Presentation CreationPresentation Creation
+Data AnalysisData Analysis
+Trad
+  </p>
+  <p class="youtuber">
+  <h2>thorium234 at the studio</h2>
+10,330,394 views  Aug 14, 2025 <br>
+🧠Brain.fm is the best focus music I recommend - get 30 days free here: https://brain.fm/icanstudy
+<br>
+This 3-hour study with me features the world's first music specifically designed to boost focus that is backed by research
+<br>
+=== Learning Program ===
+<br>
+I’ve distilled my 13 years of experience as a learning coach into a step-by-step learning skills program. 
+<br>
+If you want to be able to learn a high volume of knowledge and skills in a short amount of time, then check out: https://go.icanstudy.com/program-stud...
+<br>
+   &nbsp;
+<strong>=== Timestamps ===</strong><br>
+   <ol type="I">
+      <li>0:00 - Intro</li>
+    <li>1:07 - Pomodoro 1 </li>
+    <li>51:07 - Guided Break 1 </li>
+    <li>1:01:07 - Pomodoro 2</li>
+    <li>1:51:07 - Guided Break 2</li>
+    <li>2:01:05 - Pomodoro 3</li>
+    <li>2:49:56 - Break 3</li>
+   </ol>
+   <ul type="I">
+      <li>0:00 - Intro</li>
+    <li>1:07 - Pomodoro 1 </li>
+    <li>51:07 - Guided Break 1 </li>
+    <li>1:01:07 - Pomodoro 2</li>
+    <li>1:51:07 - Guided Break 2</li>
+    <li>2:01:05 - Pomodoro 3</li>
+    <li>2:49:56 - Break 3</li>
+   </ul>
+  <a href="google.com" target="_blank">go to google</a>
+  <div style="overflow-x: auto;"> 
+<table>
+  <caption>
+    Front-end web developer course 2021
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">Person</th>
+      <th scope="col">Most interest in</th>
+      <th scope="col">Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Chris</th>
+      <td>HTML tables</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th scope="row">Dennis</th>
+      <td>Web accessibility</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th scope="row">Sarah</th>
+      <td>JavaScript frameworks</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th scope="row">Karen</th>
+      <td>Web performance</td>
+      <td>36</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th scope="row" colspan="2">Average age</th>
+      <td>33</td>
+    </tr>
+  </tfoot>
+</table>
+  
+  
+     <form>
+  <h1>to: Thorium</h1>
+
+  <div id="from">
+    <label for="name">from:</label>
+    <input type="text" id="name" name="user_name" />
+  </div>
+
+  <div id="reply">
+    <label for="mail">reply:</label>
+    <input type="email" id="mail" name="user_email" />
+  </div>
+
+  <div id="message">
+    <label for="msg">Your message:</label>
+    <textarea id="msg" name="user_message"></textarea>
+  </div>
+
+  <div class="button">
+    <button type="submit">Send your message</button>
+  </div>
+</form>
+
+</body>
+</html>                   
