@@ -1,18 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>harry</title>
-    <style>
-        body{
-            text-align: center;
-            color:white;
-            background-color: purple;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Navbar Example</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    nav {
+      background-color: black;
+      display: flex;
+      align-items: center;
+      padding: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #444;
+      border-radius: 5px;
+    }
+
+    .Icon {
+      font-weight: bold;
+      font-size: 22px;
+      color: yellow;
+      margin-right: auto;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav a {
+        display: block;
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <p>im learning css with harry</p>
+
+  <nav>
+    <a href="#" class="Icon">CodeWithHarry</a>
+    <a href="#">Home</a>
+    <a href="#">Courses</a>
+    <a href="#">Tutorial</a>
+    <a href="#">Blog</a>
+    <a href="#">Contact</a>
+  </nav>
+
 </body>
 </html>
