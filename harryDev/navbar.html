@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Navbar Example</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      
+      
+    }
+    body{
+      background-image: url(./images/1-400x200.jpg);
+      background-size: cover;
+      background-attachment: fixed;
+     
+
+
+
+    }
+    #hue{
+      opacity: 50%;
+      background-color: rgb(29, 117, 194);
+     
+      color: white;
+    }
+
+    nav {
+      background-color: black;
+      display: flex;
+      align-items: center;
+      padding: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #444;
+      border-radius: 5px;
+    }
+
+    .Icon {
+      font-weight: bold;
+      font-size: 22px;
+      color: yellow;
+      margin-right: auto;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav a {
+        display: block;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="hue">
+
+  <nav>
+    <a href="#home" class="Icon">thorium234</a>
+    <a href="#home">Home</a>
+    <a href="#courses">Courses</a>
+    <a href="#tu">Tutorial</a>
+    <a href="#blog">Blog</a>
+    <a href="#tell">Contact</a>
+  </nav>
+  <section id="home">
+    <h1>Welcome to thorium234</h1>
+    <p>Your one-stop destination for programming tutorials and courses.</p>
+  </section>
+  <section id="courses">
+    <ul>
+      <li>Course 1</li>
+      <li>Course 2</li>
+      <li>Course 3</li>
+    </ul>
+  </section>
+  <section id="tu">
+    <h2>Tutorial</h2>
+    <p>Learn programming with our step-by-step tutorials.</p>
+  </section>
+  <section id="blog">
+    <h2>Blog</h2>
+    <p>Read the latest articles and news about programming.</p>
+  </section>
+  <section id="tell">
+    <h2>Contact</h2>
+    <p>Get in touch with us for any inquiries.</p>
+    <p>
+      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+    </p>
+
+  </section>
+  <footer style="text-align: center; padding: 20px; background-color: #2724dd;">
+    <br>
+  <p>&copy; 2024 thorium234. All rights reserved.</p>
+  </footer>
+  </div>
+</body>
+</html>
