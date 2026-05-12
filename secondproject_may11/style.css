@@ -1,0 +1,111 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+:root {
+    --base-color: #ffffff;
+    --text-color: #000000;
+    --primary-color: #ffc06e;
+    --secondary-color: #8d8dff;
+    --color-1: #f9f6f3;
+    --color-2: #f3f7f9;
+    --color-3: #f6f3f9;
+    --font-family: 'Merriweather', serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+html{
+    font-family: poppins,var(--font-family);
+    color:  var(--text-color);
+}
+body{
+    padding: 1em;
+    background-color: var(--base-color);
+}
+
+h1,h2,h3{
+    font-family: MerrieWeather,Poppins,var(--font-family);
+}
+nav{
+    margin: 1em auto 3em auto;
+    width: min(1000px, 100%);
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 2em;
+
+}
+
+nav li:first-child{
+    margin-right: auto;
+    font-family: var(--font-family);
+    font-weight: bold;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+nav a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+header,section{
+    margin: 2em auto;
+    width: min(75em, 100%);
+    background-color: var(--color-1);
+    padding: min(2em, 15%);
+    border-radius: 1em;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3em;
+}
+
+header img{
+    max-width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+.text-container{
+    flex: 0 1 34em;
+}
+
+h1{
+    font-size: 2.5em;
+    /* margin-bottom: 0.5em; */
+}
+.text-container p{
+    flex: 75em 0 1em 0;
+    font-size: 1.2rem;
+}
+
+.cta-button{
+    display: inline-block;
+    padding: 0.75em 1.25em;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 0.5em;
+    margin-top: 1em;
+    transition: background-color 0.3s ease;
+    color: white;
+    font-weight: 600;
+}
+
+.secondary{
+    background-color: var(--secondary-color);
+}
