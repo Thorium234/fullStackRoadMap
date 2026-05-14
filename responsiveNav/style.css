@@ -1,107 +1,104 @@
+:root{
+    --color-1: #0f1016;
+    --text-color: #f0f0f0;
+    --accent-color: #006aff;
+}
+
 *{
-    padding:0;
-    margin:0;
-    box-sizing:border-box;
-}
-body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    background-color: #f2f2f2;
 }
 
-/* here the html make this a sidetogglable on small devices
-<nav>
-        <div class="logo">Logo</div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-    </nav> */
+html{
+    font-size: 12pt;
+    /* color: var(--text-color); */
+}
 nav{
+    height: 60px;
+    background-color: var(--color-1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.link-container{
+    height:100%;
+    width: 100%;
     display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background-color:#333;
-    padding:10px 20px;
+    flex-direction: row;
+    align-items: center;
 }
-nav .logo{
-    color:#fff;
-    font-size:24px;
-    font-weight:bold;
+
+nav a{
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: background-color 0.3s ease;
 }
-nav .nav-links{
-    list-style:none;
-    display:flex;
+
+nav a:hover{
+    background-color: var(--accent-color);
 }
-nav .nav-links li{
-    margin-left:20px;
+
+nav .home-link{
+    margin-right: auto;
 }
-nav .nav-links li a{
-    color:#fff; 
-    text-decoration:none;
+
+nav svg{
+    fill:var(--text-color)
 }
-/* lets use mecdia query to make the navbar togglable on small devices */
-/* @media (max-width:768px){
-    nav .nav-links{
-        display:none;
-        flex-direction:column;
-        width:100%;
-        position:absolute;
-        top:60px;
-        left:0;
-        background-color:#333;
-    }
-    nav .nav-links li{
-        margin:10px 0;
-    }
-    nav .burger{
-        display:block;
-        cursor:pointer;
-    }
-    nav .burger div{
-        width:25px;
-        height:3px;
-        background-color:#fff;
-        margin:5px;
-    }
-    /* humberger is just displayed but not working */
-    /* add transition and interactivity 
-    nav .nav-links.active{
-        display:flex;
+
+#sedebar-active{
+    display: none;
+}
+.open-sidebar-button,.close-sidebar-button{
+    
+    display:none;
+}
+
+@media (max-width: 450px){
+    .links-container{
+        
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top:0;
+        right: -100%;
+        z-index:10;
+        width: 300px;
+        background-color: var(--color-1);
+        box-shadow: -5x 0 5px rgba(0,0,0,0.25);
+        transition: 0.75s ease-out;
     }
 
-} */
-/* make it work the humberger in a media query*/
-@media screen and (max-width:768px){
-    nav .nav-links{
-        display:none;
-        flex-direction:column;
-        width:100%;
-        position:absolute;
-        top:60px;
-        left:0;
-        background-color:#333;
+    nav a{
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        justify-content: flex-start;
     }
-    nav .nav-links li{
-        margin:10px 0;
-    }
-    nav .burger{
-        display:block;
-        cursor:pointer;
-    }
-    nav .burger div{
-        width:25px;
-        height:3px;
-        background-color:#fff;
-        margin:5px;
-    }
-    nav .nav-links.active{
-        display:flex;
-    }
+
+    .open-sidebar-button,.close-sidebar-button{
+        padding: 20px;
+    
+    display:block;
+}
+
+#sidebar-active:checked ~ .links-container{
+    right:0;
+}
+#sidebar-active:checked ~ #overlay{
+    
+    height:100%;
+    width:100%;
+    position: fixed;
+    top:0;
+    left:0; 
+    z-index: 9;
+}
     
