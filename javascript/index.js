@@ -30,4 +30,46 @@ let name="thorium234"
 let age = 24
 let occupation = "student"
 
-console.log("my name is "+ name"" +"" age+"" occupation)
+console.log("my name is "+ name + "" +""+ age+""+ occupation);
+//basic datatypes
+//strings, numbers booleans null undefined
+//
+//1. Strings and joineries
+//
+let message_2 = "hello"+ "and" +"goodbye";
+console.log(message_2)
+//template strings
+//
+let name_2 = "thorium";
+let topic = "javascript";
+
+console.log(`${name_2}is learning ${topic} today`);
+//
+//numbers integers and floats
+//
+let x=1;
+let y=2;
+console.log(x+y);
+//floats
+//
+let f=1.2;
+let z=2.34;
+console.log(f+z);
+
+//booleans in javascript represents true and false values
+//
+let on = true;
+let off = false;
+
+//frequently used type conversions
+//Number()
+//String()
+//Boolean()
+//
+let x_1= "7";
+let y_1=5;
+//convert x to integer
+//
+x_2 = Number(x_1);
+
+console.log(x_2+y_1);
