@@ -73,3 +73,21 @@ let y_1=5;
 x_2 = Number(x_1);
 
 console.log(x_2+y_1);
+
+//
+//operators in js as the name implies, operators are symbolys you can use to perform operations on your datatypes
+//
+console.log(10-3);//7
+console.log(2+4);//6
+
+//
+//
+//10_js_arrays
+//an array is an object datatype that can be used to hold more that one value 
+//
+//to create an array you need to use that square brackets [] and separate the items using a comma.
+//example of list of strings
+let birds=["owl","egle","parrot"];
+birds.push("falcon");
+birds.pop();
+console.log(birds);
