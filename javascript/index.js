@@ -90,4 +90,70 @@ console.log(2+4);//6
 let birds=["owl","egle","parrot"];
 birds.push("falcon");
 birds.pop();
-console.log(birds);
+console.log(birds[1] );
+//
+//arrays canalso have mix of values like this 
+//
+let mixedArray=['books','toilet',10,20.56];
+//you can also assign new value to a specific index using the assignment operators
+mixedArray[3]=56;
+console.log(mixedArray[3]);
+//
+//special methods for array manipulation
+//use push() method to add an item to the end of the arrays
+//
+let materials=['ugenya','ugunja'];
+materials.push('ekero');
+console.log(materials);
+//
+//use pop() to remove an item from the end of an array:
+//
+materials.pop();
+console.log(materials);
+//
+//
+//the unshift() method can be used to add an item from the front of index 0:
+//
+let fishes=['salmon','goldfish','tuna'];
+fishes.unshift('sardine');
+console.log(fishes);
+//
+// the shift() method is used to find or return the index of an item in the array
+    //
+let fashon=['tetema','daymond','rayvan'];
+fashon.shift();
+console.log(fashon)//[daymond,rayvan]
+//
+//
+//the indexOf() method can be used to find and return the index of an item in the array.
+//the method returns -1 when an item isnt found inside the array
+////
+//
+let pos= fashon.indexOf('daymond');
+console.log(pos);
+//
+//to get the size of an array you access the length property 
+//
+console.log(fashon.length)//2
+
+//Exercise #4
+//create an array named colors that includes a red,green and blue colors 
+//first add a black color after the last index of the array then print the array
+//next move the value of red and swap the position of greem and blue print the array.
+//finally add the co;or yellow on the first index of the array then print the array 
+//
+//the result output is as follows:
+//[red,green, blue, black]
+//[blue,green,black]
+//[yellow,blue,green,black]
+//
+//attempts
+//
+let colors=['red','green','blue'];
+colors.push('black');
+console.log(colors);
+colors.shift();
+console.log(colors);
+colors.unshift('yellow');
+console.log(colors);
+
