@@ -246,3 +246,52 @@ console.log("iteration",i);
 for (let j = 1; j<=3;j++){
 console.log("looping",j);
 }
+
+//
+//
+//functions
+//are reusable block of code designed to perform specific tast
+//
+function greet(name){
+// name is a parameter
+console.log("hello"+name);
+
+}
+greet("thorium");
+//
+//parametr is a placeholder inside a function
+//argument is a real value given at call time
+//
+function add(a,b){
+return a+b; // returns the sum 
+}
+let result = add(5, 9);
+console.log(result);
+//
+//
+//arrow function
+//=> they are shoter and do have their own binding which makes the useful for some cases
+//
+const square = n => n*n;
+console.log(square(4));
+//
+//
+//constructor function 
+//a special type of function used to create multiple objects with the same structure
+//
+function Person(Name1, Age1){
+this.Name1;
+    this.Age1;
+}
+const user = new Person("thor", 32);
+console.log(user.Name1);
+
+//
+//
+//Async function
+//they return a promise and you can use await inside them to paise until another promise resolves
+//
+async function fetchData(){
+return "data fetched";
+}
+fetchData().then(console.log);
