@@ -157,3 +157,92 @@ console.log(colors);
 colors.unshift('yellow');
 console.log(colors);
 
+//
+//control flows(if-else,switch,loops)
+//
+// if else statements
+//
+let age1 = 85;
+if (age1 >= 90){
+console.log("you are an adult");
+}
+else if(age1 <=80){
+console.log("you are a minor junior");
+}
+
+else{
+console.log("you can grow");
+}
+//
+//switch statements 
+//
+let day = 9;
+switch(day){
+    case 1:
+        console.log("monday");
+        break;
+    case 2:
+        console.log("tuesday");
+        break;
+    case 3:
+        console.log("wensday");
+        break;
+    case 4:
+        console.log("thursday");
+        break;
+    case 5 :
+        console.log("friday");
+        break;
+    case 6:
+        console.log("saturday");
+        break;
+    case 7:
+        console.log("sunday");
+        break;
+
+    default:
+        console.log("enjoy the day");
+}
+
+//
+//Loops
+//
+//for loops
+//
+for (let i=0;i<5;i++){
+    console.log(i)//output: 0,1,2,3,4
+}
+
+//
+//while loops
+//
+let count = 0;
+while(count <3){
+console.log(count);
+    count++;
+}//output:0,1,2,3
+
+//
+//do-while loops
+//
+let v = 0;
+do{
+console.log(v);
+    v++
+}while(v<3);//output: 0,1,2
+
+//
+//while loop 
+//
+let i = 0;
+while (i<5){
+console.log("iteration",i);
+    i++;
+}
+
+//
+//for loop 
+//
+for (let j = 1; j<=3;j++){
+console.log("looping",j);
+}
