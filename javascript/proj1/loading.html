@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multi-Color CSS Spinner</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #f0f0f0; /* Optional: for contrast */
+    }
+
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      position: relative;
+      animation: spin 1.5s linear infinite;
+    }
+
+    .spinner::before,
+    .spinner::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 8px solid transparent;
+    }
+
+    .spinner::before {
+      border-top-color: red;
+      border-right-color: green;
+      animation: rotateCW 1.5s linear infinite;
+    }
+
+    .spinner::after {
+      border-bottom-color: black;
+      border-left-color: white;
+      animation: rotateCCW 1.5s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes rotateCW {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes rotateCCW {
+      to { transform: rotate(-360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="spinner"></div>
+</body>
+</html>   
