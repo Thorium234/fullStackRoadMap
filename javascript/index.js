@@ -1,3 +1,41 @@
+//
+//Variables and Data Types
+//JavaScript uses variables to store data. Here's how to declare variables:
+//
+// Using let (recommended for variables that will change)
+let ag = 25;
+
+// Using const (for values that won't change)
+const nam = "John";
+// Number
+let count77 = 42;
+let price = 19.99;
+
+// String
+let greeting = "Hello";
+let message0 = 'World';
+
+// Boolean
+let isActive = true;
+let isComplete = false;
+
+// Undefined
+let result2344;  // Value is undefined
+
+// Null
+let data = null;
+
+// Object
+let person = {
+    firstName: "Jane",
+    lastName: "Doe",
+    age1: 28
+};
+
+// Array (a type of object)
+let colors22 = ["red", "green", "blue"];
+// Using var (older way, generally avoided in modern JavaScript)
+var isStudent = true;
 console.log("hello world");
 //this is a comment
 //
