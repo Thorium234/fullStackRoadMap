@@ -13,7 +13,27 @@
         <button id="changeColorBtn">Change Background Color</button>
         <p id="counter">You've clicked the button 0 times.</p>
     </div>
-    
+	<div class="form-container">
+    <h2>Registration Form</h2>
+    <form id="registrationForm">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            <span class="error" id="username-error"></span>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <span class="error" id="email-error"></span>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <span class="error" id="password-error"></span>
+        </div>
+        <button type="submit">Register</button>
+    </form>
+</div>    
     <script src="script.js"></script>
 </body>
 </html>
