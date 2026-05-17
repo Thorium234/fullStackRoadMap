@@ -295,3 +295,21 @@ async function fetchData(){
 return "data fetched";
 }
 fetchData().then(console.log);
+//
+//function checkAge(age) 
+/*function checkAge(age_new) {
+  if (age_new >= 18) {
+    return true;
+  } else {
+    return confirm('Do you have permission from your parents?');
+  }
+}
+
+let age_now = prompt('How old are you?', 18);
+
+if ( checkAge(age_now) ) {
+  alert( 'Access granted' );
+} else {
+  alert( 'Access denied' );
+}
+    */
