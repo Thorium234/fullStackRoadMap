@@ -26,3 +26,49 @@ document.addEventListener('DOMContentLoaded', function() {
         return color;
     }
 });
+
+// Form validation
+const form = document.getElementById('registrationForm');
+const usernameInput = document.getElementById('username');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+const usernameError = document.getElementById('username-error');
+const emailError = document.getElementById('email-error');
+const passwordError = document.getElementById('password-error');
+
+form.addEventListener('submit', function(e) {
+    let isValid = true;
+    
+    // Reset errors
+    usernameError.textContent = '';
+    emailError.textContent = '';
+    passwordError.textContent = '';
+    
+    // Validate username
+    if (usernameInput.value.length < 3) {
+        usernameError.textContent = 'Username must be at least 3 characters long';
+        isValid = false;
+    }
+    
+    // Validate email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailInput.value)) {
+        emailError.textContent = 'Please enter a valid email address';
+        isValid = false;
+    }
+    
+    // Validate password
+    if (passwordInput.value.length < 6) {
+        passwordError.textContent = 'Password must be at least 6 characters long';
+        isValid = false;
+    }
+    
+    // Prevent form submission if validation fails
+    if (!isValid) {
+        e.preventDefault();
+    } else {
+        e.preventDefault(); // In a real app, you might remove this and let the form submit
+        alert('Form submitted successfully!');
+        form.reset();
+    }
+});
