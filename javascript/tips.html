@@ -28,6 +28,27 @@
     let alpha = 'Hello, World!';
     let reversed = alpha.split('').reverse().join('');
     console.log(reversed); // Output: !dlroW ,olleH
+
+    //fixing capitalization
+    let name = 'john doe';
+    let capitalized =name[0].toUpperCase() + name.slice(1).toLowerCase();
+    console.log(capitalized); // Output: John doe
+
+    //making string from older string
+    let old = 'man6752526272&2635;throriun djdj ';
+    let code = old.slice(0,3);
+    let semicolonIndex = old.indexOf(';');
+    let number = old.slice( semicolonIndex+1); 
+    let newString = code + number;
+    console.log(newString); // Output: man2635
+
+    //find out xmass messages\
+    let message = 'Merry Christmas and Happy New Year!';
+    if (message.toLowerCase().includes('christmas')) {
+      console.log('The message contains Christmas wishes!');
+    } else {
+      console.log('The message does not contain Christmas wishes.');
+    }
  
   </script>
 </body>
