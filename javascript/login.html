@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Simple Calculator</title>
+</head>
+<body>
+  <h1>login</h1>
+
+
+  <script>
+    //define a user in the program
+    const user = {
+      username: 'admin',
+      password: '123'
+    };
+    //read user input using prompt method
+    const inputUsername = prompt('Enter username:').trim().toLocaleLowerCase();
+    const inputPassword = prompt('Enter password:').trim();
+
+    const userInfo  = user.username + ':' + user.password;
+    if (inputUsername === user.username && inputPassword === user.password) {
+      alert('Login successful!');
+      //redirect to success page
+      window.location.href = 'success.html';
+    } else {
+      alert('Login failed. Please check your username and password.');
+      //redirect to login page
+      window.location.href = 'login.html';
+    }
+  
+  </script>
+</body>
+</html>
