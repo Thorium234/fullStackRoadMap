@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+</head>
+<body>
+    <script>
+        //scope is accesibility of accessing a variable
+        console.log("thorium hello");//logging to the console
+        document.write('hello')//writing html doc
+        //variables and creation 
+        //store place holding 
+        //using let and const
+        let aSide = 0;//mutable
+        const bSide = 0; //immutable
+        //deciding between let and const 
+       // const is always good
+       const taxRate = 0.1;
+       const total = 100 + (100*taxRate);
+       //skip 100 lines of code 
+       console.log(total);
+      //Global scope  ista accessibel everywhere
+      let iAmaGlobalVar= 'hello';
+      //function declation
+      function printVariable(){
+        console.log(iAmaGlobalVar);
+      }
+      printVariable();//calling function
+      //logging variable
+      console.log(iAmaGlobalVar);
+      //lexical scope
+    //   function A(){//parent
+    //     let greetings = "hello";
+    //     function B(){//child
+    //         function c(){ //grandchild
+    //             console.log(greetings);
+
+    //         }
+    //         c(); //calling function A
+
+    //     }
+    //     B();
+    //   }
+    //   c();//calling functio A
+    // hoisting and remporal dea zone
+    var x = 10;//initialization
+    // var x; declaration
+    // x=10;//assignment
+    function hoist(){
+        let b = 10;
+        // let b;
+        // b=20;
+    }
+    </script>
+</body>
+</html>
