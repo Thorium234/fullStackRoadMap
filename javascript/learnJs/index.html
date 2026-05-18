@@ -52,7 +52,50 @@
         let b = 10;
         // let b;
         // b=20;
+
     }
+    //datatypes       they are defined in the language and they determine the type of data that can be stored in a variable
+       let name = "thorium";//string
+        let age = 100;//number
+        let isHuman = true;//boolean
+        let hobbies = ['coding','gaming'];//array
+        let person = {name:'thorium',age:100};//object
+        let nothing = null;//null
+        let notDefined; //undefined
+        console.log(name, age, isHuman, hobbies, person, nothing, notDefined);
+        console.log(typeof name, typeof age, typeof isHuman, typeof hobbies, typeof person, typeof nothing, typeof notDefined);
+
+        //cnverting to string
+        //toString() method
+        //string()
+        let num = 100;
+        let numStr = num.toString();
+        console.log(numStr, typeof numStr);
+        //string concatenation
+        let str1 = "hello";
+        let str2 = "world";
+        let concatenated = str1 + " " + str2;
+        console.log(concatenated);
+        let str3 = String(num);
+        console.log(str3, typeof str3);
+
+        //character literals helps you formart your string 
+            let name1 = "thorium";
+            let age1= 33;
+            let greeting = `hello ${name1} you are ${age1} years old`;//template literals
+            console.log(greeting);
+            //literal  meaning 
+            /*
+            \n inserts a new line in a string
+            \t inserts a tab in a string
+            \\ inserts a backslash in a string
+
+            */
+            let formattedString = "hello\nworld\tthorium\\";
+            console.log(formattedString);
+
+            //calculator application in js 
+
     </script>
 </body>
 </html>
