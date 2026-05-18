@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>reverse string</title>
+</head>
+<body>
+  <h1>Hello, World!</h1>
+
+  <input id="strInput" type="text" placeholder="enter a string" />
+  <button id="reverseBtn">Reverse String</button>
+
+  <p id="result" aria-live="polite"></p>
+
+
+  <script>
+    const strInput = document.getElementById('strInput');
+    const reverseBtn = document.getElementById('reverseBtn');
+    const resultEl = document.getElementById('result');
+
+    reverseBtn.addEventListener('click', () => {
+      const str = String(strInput.value);
+      const reversed = str.split('').reverse().join('');
+      resultEl.textContent = `Reversed string: ${reversed}`;
+    });
+
+    //reverse string
+    let alpha = 'Hello, World!';
+    let reversed = alpha.split('').reverse().join('');
+    console.log(reversed); // Output: !dlroW ,olleH
+ 
+  </script>
+</body>
+</html>

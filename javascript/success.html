@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Simple Calculator</title>
+</head>
+<body>
+  <h1>Hello, World!</h1>
+
+  <input id="num1" type="number" placeholder="enter a number" />
+  <input id="num2" type="number" placeholder="enter a number" />
+  <!-- operator as a select is less error-prone -->
+  <select id="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <button id="calcBtn">Calculate</button>
+
+  <p id="result" aria-live="polite"></p>
+
+  <script>
+    const num1El = document.getElementById('num1');
+    const num2El = document.getElementById('num2');
+    const opEl   = document.getElementById('operator');
+    const btn    = document.getElementById('calcBtn');
+    const out    = document.getElementById('result');
+
+    btn.addEventListener('click', () => {
+      // read and parse values at click time
+      const a = Number(num1El.value);
+      const b = Number(num2El.value);
+      const op = String(opEl.value).trim();
+
+      // validate
+      if (!Number.isFinite(a) || !Number.isFinite(b)) {
+        out.textContent = 'Error: please enter valid numbers';
+        return;
+      }
+
+      let result;
+      switch (op) {
+        case '+': result = a + b; break;
+        case '-': result = a - b; break;
+        case '*': result = a * b; break;
+        case '/':
+          if (b === 0) {
+            out.textContent = 'Error: division by zero';
+            return;
+          }
+          result = a / b;
+          break;
+        default:
+          out.textContent = 'Error: invalid operator';
+          return;
+      }
+
+      out.textContent = `Result: ${result}`;
+    });
+  </script>
+</body>
+</html>
