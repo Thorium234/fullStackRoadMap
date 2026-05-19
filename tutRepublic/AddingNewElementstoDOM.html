@@ -1,0 +1,82 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+    <h1 id="title">Hello World!</h1>
+    <p id="hint">This is a simple paragraph.</p>
+</div>
+ 
+<script>
+// Creating a new div element 
+//let newDiv = document.createElement("div");
+ 
+// Creating a text node 
+let newContent = document.createTextNode("Hi, how are you doing?");
+ 
+// Adding the text node to the newly created div
+newDiv.appendChild(newContent);
+ 
+// Adding the newly created element and its content into the DOM 
+let currentDiv = document.getElementById("main"); 
+document.body.appendChild(newDiv, currentDiv);
+</script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Get Set Inner HTML of an Element</title>
+</head>
+<body>
+    <div id="main">
+		<h1 id="title">Hello World!</h1>
+		<p id="hint">This is a simple paragraph.</p>
+	</div>
+	
+	<button type="button" onclick="getContents()">Get Contents</button>
+	<button type="button" onclick="setContents()">Set Contents</button>
+	
+	<script>
+	function getContents() {
+		// Getting inner HTML conents
+		let contents = document.getElementById("main").innerHTML;
+		alert(contents); // Outputs inner html contents
+	}
+	function setContents() {
+		// Setting inner HTML contents
+		let mainDiv = document.getElementById("main");
+		mainDiv.innerHTML = "<p>This is <em>newly inserted</em> paragraph.</p>";
+	}	
+	</script>
+    <button id="myBtn">Click Me</button>
+ 
+<script>
+// Selecting button element
+let btn = document.getElementById("myBtn");
+ 
+// Defining custom functions
+function sayHello() {
+    alert("Hi, how are you doing?");
+}
+ 
+function setHoverColor() {
+    btn.style.background = "yellow";
+}
+ 
+function setNormalColor() {
+    btn.style.background = "";
+}
+ 
+// Assigning event listeners to the button
+btn.addEventListener("click", sayHello);
+btn.addEventListener("mouseover", setHoverColor);
+btn.addEventListener("mouseout", setNormalColor);
+</script>
+</body>
+</html>
