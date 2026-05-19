@@ -1,0 +1,26 @@
+<!-- Selecting Elements by ID
+You can select an element based on its unique ID with the getElementById() method. This is the easiest way to find an HTML element in the DOM tree.
+
+The following example selects and highlight an element having the ID attribute id="mark". -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JS Select Element by ID</title>
+</head>
+<body>
+    <p id="mark">This is a paragraph of text.</p>
+    <p id="paragraph2">This is another paragraph of text.</p>
+
+    <script>
+    // Selecting element with id mark 
+    let match = document.getElementById("mark");
+    let p2 = document.getElementById("paragraph2");
+     
+    // Highlighting element's background
+    match.style.background = "yellow";
+    p2.style.color = "cyan";
+    </script>
+</body>
+</html>
