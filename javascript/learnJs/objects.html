@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js- create object type data type</title>
+</head>
+<body>
+    <script>
+        // //the new keyword
+        // let num2 = new Number(5); //number
+       
+        //  //literal values
+        //  let num1 = 5; //number
+        let person = new Object();
+        person.name = "thorium";
+        person.age = 100;
+        person.isHuman = true;
+        console.log(person);
+        //object literal
+        let person2 = {
+            name: "thorium",
+            age: 100,
+            isHuman: true
+        };
+        console.log(person2);
+        //accessing object properties
+        console.log(person.name);
+        console.log(person['age']);
+        //modifying object properties
+        person.name = "thorium2";
+        console.log(person.name);
+        //adding new properties
+        person.gender = "male";
+        console.log(person.gender);
+        //deleting properties
+        delete person.isHuman;
+        console.log(person.isHuman);
+        //creating  empty object
+        let emptyObject = {};
+        console.log(typeof emptyObject);
+        // creating object using constructor function
+        function Person(name, age, isHuman){
+            this.name = name;
+            this.age = age;
+            this.isHuman = isHuman;
+        }
+        let person3 = new Person("thorium", 100, true);
+        console.log(person3);
+    </script>
+</body>
+</html>
