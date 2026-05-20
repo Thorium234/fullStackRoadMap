@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+/* h1{
+    color: yellow;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+} */
+ .title ,#quiz1 ,label {
+font-family: Arial;
+font-family: Roboto, Verdana, Arial;
+font-size: 30px;
+font-weight: bold;
+font-weight: 700;
+font-style: italic;
+text-align: center;
+line-height: 24px;
+text-decoration: underline;
+text-decoration: none;}
+
+#answers{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
