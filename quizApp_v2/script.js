@@ -14,6 +14,6 @@ function submitQuiz(){
     if(q4 && q4.value === 'c') score++;
     if(q5 && q5.value === 'b') score++;
 
-    //3. display the results
+    //3. display the result
     document.querySelector('.quizResult').textContent = `Your score is: ${score}/5`;
 }
