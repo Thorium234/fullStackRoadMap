@@ -5,3 +5,4 @@ node_modules/
 .snapshots
 resources/*
 newResource/*
+basics.md
