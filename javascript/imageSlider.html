@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Slider</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #f0f0f0;
+    }
+    .slider-container {
+      position: relative;
+      width: 600px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease;
+      height: 400px;
+    }
+    .slider img {
+      min-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    .btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+    .prev {
+      left: 10px;
+    }
+    .next {
+      right: 10px;
+    }
+    .btn:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slider-container">
+    <div class="slider" id="slider">
+      <img src="https://picsum.photos/id/10/800/500" alt="Image 1">
+      <img src="https://picsum.photos/id/20/800/500" alt="Image 2">
+      <img src="https://picsum.photos/id/30/800/500" alt="Image 3">
+    </div>
+    <button class="btn prev" onclick="moveSlide(-1)">‹</button>
+    <button class="btn next" onclick="moveSlide(1)">›</button>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const slider = document.getElementById('slider');
+    const images = slider.querySelectorAll('img');
+    const totalImages = images.length;
+
+    function moveSlide(direction) {
+      currentIndex += direction;
+      if (currentIndex < 0) currentIndex = totalImages - 1;
+      if (currentIndex >= totalImages) currentIndex = 0;
+      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+  </script>
+
+</body>
+</html>   
