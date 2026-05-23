@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Content Example</title>
+  <style>
+    .box {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="content-box">
+    <h2>Welcome to our website!</h2>
+    <p>Click a button below to update this content:</p>
+  </div>
+  
+  <button id="btn-about">About Us</button>
+  <button id="btn-services">Our Services</button>
+  <button id="btn-contact">Contact Info</button>
+  
+  <script>
+    // Get the content box and buttons
+    const contentBox = document.getElementById("content-box");
+    const aboutBtn = document.getElementById("btn-about");
+    const servicesBtn = document.getElementById("btn-services");
+    const contactBtn = document.getElementById("btn-contact");
+    
+    // Add event listeners to buttons
+    aboutBtn.addEventListener("click", function() {
+      contentBox.innerHTML = `
+        <h2>About Us</h2>
+        <p>We are a company focused on creating amazing web experiences.</p>
+        <p>Founded in 2010, we've helped hundreds of clients achieve their goals.</p>
+      `;
+      contentBox.style.backgroundColor = "#e6f7ff";
+    });
+    
+    servicesBtn.addEventListener("click", function() {
+      contentBox.innerHTML = `
+        <h2>Our Services</h2>
+        <ul>
+          <li>Web Development</li>
+          <li>Mobile Applications</li>
+          <li>UI/UX Design</li>
+        </ul>
+      `;
+      contentBox.style.backgroundColor = "#e6ffe6";
+    });
+    
+    contactBtn.addEventListener("click", function() {
+      contentBox.innerHTML = `
+        <h2>Contact Information</h2>
+        <p>Email: info@example.com</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Address: 123 Web Dev Lane, Internet City</p>
+      `;
+      contentBox.style.backgroundColor = "#ffe6e6";
+    });
+  </script>
+</body>
+</html>
