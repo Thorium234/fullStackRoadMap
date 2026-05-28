@@ -53,3 +53,8 @@ tournamentRunner/
     ├── state.js
     ├── storage.js
     └── tournament.js
+
+```bash
+git clone < git url main branch >
+cd tounamentRunner/
+code .
