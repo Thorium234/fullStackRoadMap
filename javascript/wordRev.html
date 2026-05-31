@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <input id="strings" >
+    <p id="output">
+    </p>
+<button onclick="reverseWords()">reverseMe</button>
+    
+
+    <script>
+const myinput = document.getElementById("strings");
+const myoutput = document.getElementById("output");
+    function reverseWords() {
+   const textToReverse = myinput.value;
+   const result =textToReverse.split(' ').map(word => word.split('').reverse().join('')).join(' ');
+
+    
+ myoutput.innerHTML = "Result: " + result;
+   console.log(result);}
+    </script>
+    </body>
+</html>
