@@ -91,7 +91,7 @@ Responsibilities:
 
     Coordinate storage updates
 
-Think of this file as the application brain.
+file as the application brain.
 Development Philosophy
 
 This project focuses on learning real engineering principles.
@@ -112,7 +112,7 @@ Rules:
 
 Recommended Learning Path
 
-Before implementing features, research these topics properly.
+Before implementing features, research  topics .
 Core Concepts
 
 Search these topics:
@@ -259,4 +259,3 @@ Tournament
  │    │     └── Winner
  └── Status
 
-If you cannot model the data clearly on paper, your code will become spaghetti regardless of skill.

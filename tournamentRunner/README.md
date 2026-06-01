@@ -55,6 +55,7 @@ tournamentRunner/
     └── tournament.js
 
 ```bash
-git clone < git url main branch >
+git clone <  https://github.com/Thorium234/fullStackRoadMap.git
+ >
 cd tounamentRunner/
 code .

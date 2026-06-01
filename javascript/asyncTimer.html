@@ -1,0 +1,13 @@
+<html>
+<body>
+   <div id = "demo"> </div>
+   <script>
+      let output = document.getElementById('demo');
+      output.innerHTML += "Code execution started. <br>";
+      setTimeout(function () {
+         output.innerHTML += "setTimeout() called. <br>";
+      }, 1000);
+      output.innerHTML += "Code execution finished. <br>";
+   </script>
+</body>
+</html>
