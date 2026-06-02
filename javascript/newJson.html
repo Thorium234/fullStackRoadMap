@@ -1,0 +1,28 @@
+<html>
+<body>
+<button onclick="getData()">Load</button>
+<div id="demo"></div>
+<script>
+let output = document.getElementById("demo");
+async function getData() {
+   try {
+      let response = await fetch('https://api.github.com/users');
+      
+      if (!response.ok) {
+         throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      let data = await response.json();
+
+      // Uses = instead of += to clear previous results on new clicks
+      output.innerHTML = "login: " + data[0].login + "<br>" +
+                         "id: " + data[0].id + "<br>" +
+                         "node_id: " + data[0].node_id + "<br>" +
+                         "avatar_url: " + data[0].avatar_url + "<br>";
+   } catch (err) {
+      output.innerHTML = "The error is: " + err.message;
+   }
+}
+</script>
+</body>
+</html>
