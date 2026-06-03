@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage User Manager</title>
+    <style>
+        /* Modern Reset and Base Styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            background-color: #f8fafc;
+            color: #1e293b;
+            padding: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1, h2 {
+            margin-bottom: 1.5rem;
+            color: #0f172a;
+        }
+
+        /* Form Layout */
+        .form-container {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2.5rem;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #475569;
+        }
+        input {
+            padding: 0.625rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        button {
+            cursor: pointer;
+            padding: 0.625rem 1.25rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+        }
+        .btn-submit {
+            background-color: #2563eb;
+            color: #ffffff;
+            align-self: flex-end;
+            height: 42px;
+        }
+        .btn-submit:hover {
+            background-color: #1d4ed8;
+        }
+        .btn-delete {
+            background-color: #ef4444;
+            color: #ffffff;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875rem;
+        }
+        .btn-delete:hover {
+            background-color: #dc2626;
+        }
+
+        /* Table Styling */
+        .table-container {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        th, td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            background-color: #f1f5f9;
+            color: #475569;
+            font-weight: 600;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:hover td {
+            background-color: #f8fafc;
+        }
+        .empty-message {
+            text-align: center;
+            color: #64748b;
+            padding: 2rem;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>User Management Dashboard</h1>
+
+    <!-- Form Section -->
+    <div class="form-container">
+        <h2>Add New User</h2>
+        <form id="userForm">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required placeholder="johndoe123">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                </div>
+                <button type="submit" class="btn-submit">Save User</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Data Display Section -->
+    <h2>Stored Users</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Username</th>
+                    <th>Email Address</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- JavaScript handles population -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Use strict encapsulation to prevent global scope pollution
+        (() => {
+            const STORAGE_KEY = 'dashboard_users';
+            const form = document.getElementById('userForm');
+            const tableBody = document.getElementById('tableBody');
+
+            /**
+             * Safely retrieves data from local storage
+             * Verification: Standard JSON.parse wrapper to handle null exceptions
+             */
+            function getStoredData() {
+                try {
+                    const rawData = localStorage.getItem(STORAGE_KEY);
+                    return rawData ? JSON.parse(rawData) : [];
+                } catch (error) {
+                    console.error('Storage parsing error:', error);
+                    return [];
+                }
+            }
+
+            /**
+             * Renders users array onto the HTML table interface
+             * Verification: Uses DocumentFragment for performant DOM updates 
+             */
+            function renderTable() {
+                const users = getStoredData();
+                tableBody.innerHTML = '';
+
+                if (users.length === 0) {
+                    tableBody.innerHTML = `<tr><td colspan="4" class="empty-message">No users stored yet.</td></tr>`;
+                    return;
+                }
+
+                const fragment = document.createDocumentFragment();
+
+                users.forEach((user, index) => {
+                    const tr = document.createElement('tr');
+                    
+                    // Explicitly use textContent on elements instead of template literal innerHTML 
+                    // to completely mitigate Cross-Site Scripting (XSS) injections
+                    const tdName = document.createElement('td');
+                    tdName.textContent = user.fullName;
+                    
+                    const tdUser = document.createElement('td');
+                    tdUser.textContent = user.username;
+                    
+                    const tdEmail = document.createElement('td');
+                    tdEmail.textContent = user.email;
+
+                    const tdActions = document.createElement('td');
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.textContent = 'Delete';
+                    deleteBtn.className = 'btn-delete';
+                    // Attach data attribute to target unique index cleanly
+                    deleteBtn.dataset.index = index;
+                    tdActions.appendChild(deleteBtn);
+
+                    tr.appendChild(tdName);
+                    tr.appendChild(tdUser);
+                    tr.appendChild(tdEmail);
+                    tr.appendChild(tdActions);
+                    
+                    fragment.appendChild(tr);
+                });
+
+                tableBody.appendChild(fragment);
+            }
+
+            /**
+             * Form Submission Event Listener
+             * Verification: Uses standard modern FormData API instead of manual value mapping
+             */
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                // Instantiates standard validation framework natively built into modern browsers
+                const formData = new FormData(form);
+                const newUser = {
+                    fullName: formData.get('fullName').trim(),
+                    username: formData.get('username').trim(),
+                    email: formData.get('email').trim()
+                };
+
+                const currentUsers = getStoredData();
+                currentUsers.push(newUser);
+
+                // Verification: Converts array to string payload per standard web storage specification
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(currentUsers));
+
+                // UI Update and Reset
+                renderTable();
+                form.reset();
+                document.getElementById('fullName').focus();
+            });
+
+            /**
+             * Table Event Delegation Listener
+             * Verification: Optimized memory usage using a single handler for dynamic children components
+             */
+            tableBody.addEventListener('click', (event) => {
+                if (event.target.classList.contains('btn-delete')) {
+                    const targetIndex = parseInt(event.target.dataset.index, 10);
+                    const currentUsers = getStoredData();
+                    
+                    // Mutate array cleanly by removing exact selected index position
+                    currentUsers.splice(targetIndex, 1);
+                    
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(currentUsers));
+                    renderTable();
+                }
+            });
+
+            // Initial view invocation on load
+            renderTable();
+        })();
+    </script>
+</body>
+</html>
