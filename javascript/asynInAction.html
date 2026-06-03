@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .status {
+            font-style: italic;
+            color: #666;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Users Data From an Api</h2>
+    <div id="status" class="status">Loading data...</div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Website</th>
+                <th>Company</th>
+            </tr>
+        </thead>
+        <tbody id="user-table-body">
+            <!-- Data will be inserted here automatically -->
+        </tbody>
+    </table>
+
+    <script>
+        async function fetchData() {
+            try {
+                let response = await fetch('https://jsonplaceholder.typicode.com/users/');
+                let data = await response.json();
+                console.log(data);
+                
+                // Get the table body element
+                const tableBody = document.getElementById('user-table-body');
+                // Clear any existing data rows
+                tableBody.innerHTML = '';
+
+                // Loop through the data and build table rows
+                data.forEach(user => {
+                    const row = `
+                        <tr>
+                            <td>${user.id}</td>
+                            <td>${user.name}</td>
+                            <td>${user.username}</td>
+                            <td>${user.email}</td>
+                            <td>${user.phone}</td>
+                            <td>${user.website}</td>
+                            <td>${user.company.name}</td>
+                        </tr>
+                    `;
+                    tableBody.insertAdjacentHTML('beforeend', row);
+                });
+
+                // Update status timestamp
+                document.getElementById('status').innerText = `Last updated: ${new Date().toLocaleTimeString()}`;
+
+            } catch (error) {
+                console.log(error);
+                document.getElementById('status').innerText = 'Failed to load data.';
+            }
+        }
+
+        // Run immediately on page load
+        fetchData();
+
+        // Automatically run the function every 5000 milliseconds (5 seconds)
+        setInterval(fetchData, 5000);
+    </script>
+
+</body>
+</html>
