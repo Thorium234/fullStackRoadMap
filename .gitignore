@@ -1,8 +1,7 @@
 node_modules/
 .DS_Store
-.zip
- .sixth  
+*.zip
+.sixth
 .snapshots
 resources/*
 newResource/*
-basics.md
