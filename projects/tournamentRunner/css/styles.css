@@ -1,0 +1,91 @@
+/* css/styles.css */
+:root {
+  --primary: #2c3e50;
+  --accent: #27ae60;
+  --bg: #f4f4f4;
+}
+
+body {
+  font-family: sans-serif;
+  background: var(--bg);
+  text-align: center;
+  padding: 20px;
+}
+
+.bracket {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px;
+}
+
+.round {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-width: 150px;
+}
+
+.match {
+  background: white;
+  border: 1px solid #ddd;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.player {
+  padding: 5px;
+  transition: background 0.2s;
+}
+
+.player:hover {
+  background: #eee;
+}
+
+.player.winner {
+  background: var(--accent);
+  color: white;
+  font-weight: bold;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 8px;
+  width: 200px;
+}
+
+button {
+  padding: 8px 16px;
+  cursor: pointer;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+#participant-list {
+  list-style: none;
+  padding: 0;
+  max-width: 300px;
+  margin: 0 auto 20px;
+}
+
+#participant-list li {
+  background: white;
+  margin: 5px 0;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remove-btn {
+  background: #e74c3c;
+  padding: 2px 8px;
+  font-size: 12px;
+}   

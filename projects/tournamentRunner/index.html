@@ -1,27 +1,42 @@
-<!-- tournament runner  -->
- <!DOCTYPE html>
- <html lang="en">
- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tounament runner</title>
- </head>
- <body>
-    <h1>Tournament Runner</h1>
-        <p>Welcome to the Tournament Runner! 
-            This application allows you to manage and run tournaments with ease. 
-            Whether you're organizing a sports event, a gaming competition, or any other type of tournament,
-             this tool will help you keep track of participants, matches, and results.</p>
-    
-        <h2>Features:</h2>
-        <ul>
-            <li>Create and manage tournaments</li>
-            <li>Add participants and teams</li>
-            <li>Schedule matches and track results</li>
-            <li>Generate brackets and standings</li>
-        </ul>
-    
-        <p>Get started by creating your first tournament and adding participants. Good luck, and may the best competitor win!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tournament Runner</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🏆 Tournament Runner</h1>
+  </header>
 
- </body>
- </html>
+  <main>
+    <!-- Setup Section -->
+    <section id="setup-section">
+      <div class="input-group">
+        <input type="text" id="participant-input" placeholder="Enter participant name" />
+        <button id="add-btn">Add</button>
+      </div>
+      <ul id="participant-list"></ul>
+      <button id="start-btn" class="primary">Start Tournament</button>
+    </section>
+
+    <!-- Bracket Section -->
+    <section id="bracket-section" style="display: none;">
+      <div id="bracket-container"></div>
+      <button id="reset-btn" onclick="location.reload()">New Tournament</button>
+    </section>
+  </main>
+
+  <script type="module" src="js/state.js"></script>
+  <script type="module" src="js/render.js"></script>
+  <script type="module">
+    import { initRender } from './js/render.js';
+    import { initState } from './js/state.js';
+    
+    initState();
+    initRender();
+  </script>
+</body>
+</html>   
