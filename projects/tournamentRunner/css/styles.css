@@ -88,4 +88,25 @@ button {
   background: #e74c3c;
   padding: 2px 8px;
   font-size: 12px;
+}
+
+.player.bye {
+  color: #999;
+  font-style: italic;
+  cursor: default;
+}
+
+.player.bye:hover {
+  background: transparent;
+}
+
+.match.decided {
+  cursor: default;
+}
+
+.champion {
+  font-size: 1.5em;
+  padding: 20px;
+  color: var(--accent);
+  font-weight: bold;
 }   

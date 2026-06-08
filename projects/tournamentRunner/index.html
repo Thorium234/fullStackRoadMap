@@ -12,7 +12,6 @@
   </header>
 
   <main>
-    <!-- Setup Section -->
     <section id="setup-section">
       <div class="input-group">
         <input type="text" id="participant-input" placeholder="Enter participant name" />
@@ -22,21 +21,18 @@
       <button id="start-btn" class="primary">Start Tournament</button>
     </section>
 
-    <!-- Bracket Section -->
     <section id="bracket-section" style="display: none;">
       <div id="bracket-container"></div>
-      <button id="reset-btn" onclick="location.reload()">New Tournament</button>
+      <button id="reset-btn">New Tournament</button>
     </section>
   </main>
 
-  <script type="module" src="js/state.js"></script>
-  <script type="module" src="js/render.js"></script>
   <script type="module">
     import { initRender } from './js/render.js';
     import { initState } from './js/state.js';
-    
+
     initState();
     initRender();
   </script>
 </body>
-</html>   
+</html>
